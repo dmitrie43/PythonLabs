@@ -6,16 +6,32 @@
 """
 
 import numpy as np
-import random
 
+
+def get_matrix(size, length_columns, length_rows):
+    """
+    get size matrix
+    :param size:
+    :param length_columns:
+    :param length_rows:
+    :return:
+    """
+    # matrix = np.array([
+    #     [random.randrange(0, 10) for i in range(lengthColumns)] for j in range(lengthRows)
+    # ], int)
+    matrix = np.arange(size)
+    matrix = matrix.reshape(length_columns, length_rows)
+    return matrix
+
+
+print('Введите размерность матрицы:')
+matrixSize = int(input())
 print('Введите кол-во строк:')
 lengthRows = int(input())
 print('Введите кол-во столбцов:')
 lengthColumns = int(input())
 
-matrix = np.array([
-    [random.randrange(0, 10) for i in range(lengthColumns)] for j in range(lengthRows)
-], int)
+matrix = get_matrix(matrixSize, lengthColumns, lengthRows)
 print('Матрица:')
 print(matrix)
 
