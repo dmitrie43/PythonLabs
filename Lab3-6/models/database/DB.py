@@ -21,12 +21,10 @@ class DB:
                 port=config['DB']['port']
             )
             cursor = conn.cursor()
-            self.__setattr__(conn)
             setattr(self, 'cursor', cursor)
+            setattr(self, 'conn', conn)
         except psycopg2.Error as exc:
             exit('Проблема с подключением: {}'.format(exc))
 
     def __del__(self):
-        self.conn.close()
-        del self.conn
         del self.cursor
