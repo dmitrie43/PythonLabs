@@ -21,7 +21,7 @@ class DB:
                 port=config['DB']['port']
             )
             cursor = conn.cursor()
-            setattr(self, 'conn', conn)
+            self.__setattr__(conn)
             setattr(self, 'cursor', cursor)
         except psycopg2.Error as exc:
             exit('Проблема с подключением: {}'.format(exc))

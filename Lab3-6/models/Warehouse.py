@@ -8,7 +8,6 @@ class Warehouse(DB):
 
     TABLE = 'warehouse'
 
-
     def add_new_product_to_warehouse(self, product_id):
         """
         Добавить новый товар на склад
@@ -24,7 +23,6 @@ class Warehouse(DB):
             self.conn.commit()
         except Exception as exc:
             exit('Ошибка записи: {}'.format(exc))
-
 
     def update_product_quantity(self, product_id, quantity):
         """
