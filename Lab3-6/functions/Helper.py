@@ -73,8 +73,8 @@ print(sorted(Helper.get_csv_data(path_to_file).items()))
 """Выведите информацию, соответствующую какому-либо критерию"""
 print(Helper.get_csv_data(path_to_file))
 data = Helper.get_csv_data(path_to_file).items()
-res = {k: v for k, v in data if 'leff' in v}
-print(res)
+res2 = {k: v for k, v in data if 'polarline' in v}
+print(res2)
 
 """Добавьте к программе возможность сохранения новых данных обратно в файл."""
 # data = ['tv,skyline3,20,22000'.split(',')]
